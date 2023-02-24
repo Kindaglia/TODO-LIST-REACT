@@ -25,7 +25,7 @@ function Add() {
     localStorage.setItem('blogs', JSON.stringify([..._blogs, { title, desc }]))
 
     navigate('/')
-}
+  }
 
   return (<div>
      <Typography> ADD BLOG </Typography>

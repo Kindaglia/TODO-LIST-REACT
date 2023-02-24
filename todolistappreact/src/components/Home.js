@@ -14,6 +14,22 @@ function Home() {
         setBlogs(JSON.parse(blogs))
     }, [])
 
+    const handleDelete = (blogOutIndex) => {
+      const _blogs = blogs.filter((blog, blogInIndex) => {
+          if (blogInIndex !== blogOutIndex) {
+              return blog
+          }
+      })
+      console.log(_blogs)
+      setBlogs(_blogs)
+      localStorage.setItem('blogs', JSON.stringify(_blogs))
+    }
+
+    const handleEdit = (blogIndex) => {
+      localStorage.setItem('editIndex', blogIndex)
+      navigate('/edit')
+  }
+
   return (
     <>
 
@@ -21,11 +37,13 @@ function Home() {
       <Button onClick={() => {navigate('add')}} variant="contained">ADD</Button><br /><br />
       {
         blogs && blogs.length > 0 ?
-          blogs.map(blog => {
+          blogs.map((blog,blogIndex) => {
             return (
-              <>
-                title - {blog.title}  <br />
-                Description - {blog.desc} <br /><br />
+              <><br />
+                title - {blog.title} /
+                Description - {blog.desc} 
+                <EditIcon style={{ color: 'blue', minWidth: '50px' }} onClick={() => handleEdit(blogIndex)} ></EditIcon>
+                <DeleteIcon style={{ color: 'red' }} onClick={() => handleDelete(blogIndex)} ></DeleteIcon> 
               </>
               
             )

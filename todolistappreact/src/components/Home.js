@@ -22,11 +22,14 @@ function Home() {
   }
 
   const handleConfirmDelete = () => {
-      const _blogs = blogs.filter((blog, blogInIndex) => {
-          if (blogInIndex !== deleteIndex) {
-              return blog
-          }
-      })
+    const _blogs = blogs.filter((blog, blogInIndex) => {
+      if (blogInIndex !== deleteIndex) {
+        return blog
+      } else {
+        return null
+      }
+    }).filter((blog) => blog !== null)
+    
       console.log(_blogs)
       setBlogs(_blogs)
       localStorage.setItem('blogs', JSON.stringify(_blogs))

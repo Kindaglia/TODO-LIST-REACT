@@ -22,7 +22,8 @@ function Edit() {
         let blogs = localStorage.getItem('blogs') && localStorage.getItem('blogs').length > 0 ? JSON.parse(localStorage.getItem('blogs')) : []
 
         const _blogs = blogs.map((blog, blogInIndex) => {
-            if (blogInIndex === localStorage.getItem('editIndex')) {
+            if (blogInIndex === parseInt(localStorage.getItem('editIndex'))) {
+
                 return { title, desc }
             } else {
                 return blog

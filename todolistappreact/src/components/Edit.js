@@ -27,20 +27,26 @@ function Edit() {
     }
 
     const handleEdit = () => {
+        // Verifica che i campi "title" e "desc" siano valorizzati
+        if (!title || !desc) {
+          alert('Please fill all fields')
+          return
+        }
+      
         const editIndex = localStorage.getItem('editIndex')
         const blogs = localStorage.getItem('blogs') && localStorage.getItem('blogs').length > 0 ? JSON.parse(localStorage.getItem('blogs')) : []
-
+      
         const _blogs = blogs.map((blog, blogInIndex) => {
-            if (blogInIndex === parseInt(editIndex)) {
-                return { title, desc }
-            } else {
-                return blog
-            }
+          if (blogInIndex === parseInt(editIndex)) {
+            return { title, desc }
+          } else {
+            return blog
+          }
         })
-
+      
         localStorage.setItem('blogs', JSON.stringify(_blogs))
         navigate('/')
-    }
+      }
 
     return (
         <>

@@ -27,7 +27,7 @@ function Edit() {
     }
 
     const handleEdit = () => {
-        // Verifica che i campi "title" e "desc" siano valorizzati
+        // Verifica che i campi "title" e "desc" siano completi
         if (!title || !desc) {
           alert('Please fill all fields')
           return

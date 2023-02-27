@@ -51,12 +51,12 @@ function Add() {
       </h1><br/>
       Descrizione<br/>
       <TextField color="secondary" inputProps={{ style: { color: "white" } }}
-        sx={{ width: 500 }}
+        sx={{ height: 200 ,width: 400   }}
         id="outlined-multiline-flexible" 
         value={desc} onChange={handleDescChange} 
         variant="filled"  multiline 
         rows={4} error={errors.desc} 
-        helperText={errors.desc && 'La descrizione non può essere vuota'} />
+        helperText={errors.desc && 'La descrizione non può essere vuota'}/>
       <br/><br/>
       <Button onClick={handleSubmit}  variant="contained" > SUBMIT </Button>
     </div>

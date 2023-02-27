@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import DeleteIcon from '@mui/icons-material/Delete'
 import EditIcon from '@mui/icons-material/Edit';
 import './Home.css';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 
 function Home() {
@@ -51,9 +52,8 @@ function Home() {
 
   return (
     <>
-      <br /><br />
-      <h2>Aggiungi una task</h2>
-      <Button onClick={() => {navigate('add')}} variant="contained">ADD</Button><br /><br />
+      <h2>Add Task</h2>
+      <Button id="iconAdd" onClick={() => {navigate('add')}} variant="contained"><AddBoxIcon></AddBoxIcon></Button><br /><br />
       {
         todolist && todolist.length > 0 ?
         todolist.map((todo, todoIndex) => {

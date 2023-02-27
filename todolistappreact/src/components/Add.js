@@ -46,9 +46,17 @@ function Add() {
       <Typography> ADD TODO </Typography>
       <br/>
       <h1>
-        <TextField id="outlined-multiline-flexible" value={title} onChange={handleTitleChange} label="Title" error={errors.title} helperText={errors.title && 'Il titolo non può essere vuoto'} />
+        Titolo: <br/>
+        <TextField id="outlined-multiline-flexible" color="secondary" inputProps={{ style: { color: "white" } }} value={title} onChange={handleTitleChange}  error={errors.title} helperText={errors.title && 'Il titolo non può essere vuoto'} />
       </h1><br/>
-      <TextField sx={{ width: 600 }}id="outlined-multiline-flexible" value={desc} onChange={handleDescChange} label="Description" variant="filled"  multiline  rows={4} error={errors.desc} helperText={errors.desc && 'La descrizione non può essere vuota'} />
+      Descrizione<br/>
+      <TextField color="secondary" inputProps={{ style: { color: "white" } }}
+        sx={{ width: 500 }}
+        id="outlined-multiline-flexible" 
+        value={desc} onChange={handleDescChange} 
+        variant="filled"  multiline 
+        rows={4} error={errors.desc} 
+        helperText={errors.desc && 'La descrizione non può essere vuota'} />
       <br/><br/>
       <Button onClick={handleSubmit}  variant="contained" > SUBMIT </Button>
     </div>

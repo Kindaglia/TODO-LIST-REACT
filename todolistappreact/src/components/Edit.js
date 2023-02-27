@@ -52,9 +52,11 @@ function Edit() {
       <div className='contentGet' id='add'>
             <Typography> Edit todo </Typography>
             <h1>
-              <TextField value={title} onChange={(e) => handleTitleChange(e)} label="Title" variant="filled" />
+              Titolo:<br/>
+              <TextField inputProps={{ style: { color: "white" } }} color="secondary" value={title} onChange={(e) => handleTitleChange(e)} label="Title" variant="filled" />
             </h1><br/>
-            <TextField value={desc}  sx={{ width: 600 }} multiline  rows={4} onChange={(e) => handleDescChange(e)} label="Description" variant="filled" />
+            Descrizione<br/>
+            <TextField inputProps={{ style: { color: "white" } }} color="secondary" value={desc}  sx={{ width: 600 }} multiline  rows={4} onChange={(e) => handleDescChange(e)}  variant="filled" />
             <br/><br/>
             <Button onClick={handleEdit} variant="contained" > SUBMIT </Button>
         </div>

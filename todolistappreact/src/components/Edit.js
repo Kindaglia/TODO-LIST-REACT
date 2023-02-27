@@ -32,7 +32,7 @@ function Edit() {
     const handleEdit = () => {
         // Verifica che i campi "title" e "desc" siano completi
         if (title.trim().length === 0 || desc.trim().length === 0) {
-          console.log( !desc);
+          //console.log( !desc);
           alert('Please fill all fields')
           return
         }

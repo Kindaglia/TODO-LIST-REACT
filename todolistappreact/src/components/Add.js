@@ -33,7 +33,7 @@ function Add() {
       return;
     }
 
-    console.log({ title, desc })
+    //console.log({ title, desc })
 
     const _todolist = localStorage.getItem('todolist') && localStorage.getItem('todolist').length > 0 ? JSON.parse(localStorage.getItem('todolist')) : []
 

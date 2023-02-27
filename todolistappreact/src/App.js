@@ -9,19 +9,12 @@ import {
 import Home from './components/Home.js'
 import Edit from './components/Edit'
 import Add from './components/Add'
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'light',
-  },
-});
+
 
 function App() {
   return (
-    <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
+      
     <div className="App">
        <Header/>
        <Router>
@@ -35,7 +28,6 @@ function App() {
 
       </Router>
     </div>
-    </ThemeProvider>
   );
 }
 

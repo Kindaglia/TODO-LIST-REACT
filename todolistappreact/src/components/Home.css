@@ -10,12 +10,12 @@
   }
 
 .edit{
-    margin-left: 70%;
+    margin-left: 70%;   
 }
 h1{
     font-size: 26px;
     margin: 15px 0px 5px 0px;
-    border-bottom:5px solid rgb(231, 230, 229);  
+    border-bottom:5px solid rgba(227, 225, 223, 0.122);  
 }
 
 p{
@@ -25,6 +25,7 @@ p{
 h2{
     display: inline-block;
     margin-right: 10px;
+    margin-top: 10px;
 }
 
 #add{
@@ -38,3 +39,8 @@ h2{
 #iconAdd{
     background-color: green;
 }
+
+body{
+    background-color: #352f5b;
+    color: aliceblue;
+  }

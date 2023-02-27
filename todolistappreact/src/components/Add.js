@@ -42,7 +42,7 @@ function Add() {
     navigate('/')
   }
 
-  const handleDietro = () => {
+  const handleBack = () => {
     navigate('/')
   }
 
@@ -63,7 +63,7 @@ function Add() {
         rows={4} error={errors.desc} 
         helperText={errors.desc && 'La descrizione non può essere vuota'}/>
       <br/><br/>
-        <Button onClick={handleDietro} sx={{ marginRight: 10 }}  variant="contained" > INDIETRO </Button>
+        <Button onClick={handleBack} sx={{ marginRight: 10 }}  variant="contained" > INDIETRO </Button>
         <Button onClick={handleSubmit}  variant="contained" > AGGIUNGI </Button>
       
     </div>

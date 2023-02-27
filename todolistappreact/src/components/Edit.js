@@ -18,6 +18,9 @@ function Edit() {
         }
     }, [])
 
+    const handleBack = () => {
+      navigate('/')
+    }
     const handleTitleChange = (e) => {
         setTitle(e.target.value)
     }
@@ -28,7 +31,8 @@ function Edit() {
 
     const handleEdit = () => {
         // Verifica che i campi "title" e "desc" siano completi
-        if (!title || !desc) {
+        if (title.trim().length == 0 || desc.trim().length == 0) {
+          console.log( !desc);
           alert('Please fill all fields')
           return
         }
@@ -58,6 +62,7 @@ function Edit() {
             Descrizione<br/>
             <TextField inputProps={{ style: { color: "white" } }} color="secondary" value={desc}  sx={{ width: 600 }} multiline  rows={4} onChange={(e) => handleDescChange(e)}  variant="filled" />
             <br/><br/>
+            <Button onClick={handleBack} sx={{ marginRight: 10 }}  variant="contained" > INDIETRO </Button>
             <Button onClick={handleEdit} variant="contained" > SUBMIT </Button>
         </div>
     )

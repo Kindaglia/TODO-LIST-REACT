@@ -1,11 +1,9 @@
 import { Button, Dialog, DialogTitle, DialogActions } from "@mui/material"
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import DeleteIcon from '@mui/icons-material/Delete'
-import EditIcon from '@mui/icons-material/Edit';
 import './Home.css';
-import AddBoxIcon from '@mui/icons-material/AddBox';
-
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 function Home() {
 
@@ -52,21 +50,23 @@ function Home() {
 
   return (
     <>
-      <h2>Aggiungi Task</h2>
-      <Button id="iconAdd" onClick={() => {navigate('add')}} variant="contained"><AddBoxIcon></AddBoxIcon></Button><br /><br />
+      <Button id="iconAdd" onClick={() => {navigate('add')}} variant="contained">Aggiungi Task </Button><br /><br />
       {
         todolist && todolist.length > 0 ?
         todolist.map((todo, todoIndex) => {
           return (
-            <div key={todoIndex} className="contentGet">
+            <div key={todoIndex} className="contentGet" id="testt">
                 <h1 className="leftText">
                   {todo.title}
                 </h1>
+                <div className="buttonEdDel">
+                  <AppRegistrationIcon className="edit" style={{ color: 'blue', minWidth: '50px' }} onClick={() => handleEdit(todoIndex)} />
+                  <RemoveCircleOutlineIcon style={{ color: 'red' }} onClick={() => handleDelete(todoIndex)} />
+                </div>
                 <p className="righttText">
                   {todo.desc}
                 </p>
-                  <EditIcon className="edit" style={{ color: 'blue', minWidth: '50px' }} onClick={() => handleEdit(todoIndex)} />
-                  <DeleteIcon style={{ color: 'red' }} onClick={() => handleDelete(todoIndex)} />
+                  
             </div>
           )
         }) :

@@ -31,7 +31,7 @@ function Home() {
       }
     }).filter((todo) => todo !== null)
     
-      console.log(_todolist)
+      //console.log(_todolist)
       settodolist(_todolist)
       localStorage.setItem('todolist', JSON.stringify(_todolist))
       setDeleteIndex(null)

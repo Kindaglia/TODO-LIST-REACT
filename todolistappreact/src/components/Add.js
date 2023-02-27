@@ -42,10 +42,14 @@ function Add() {
   }
 
   return (
-    <div>
+    <div className='contentGet' id='add'>
       <Typography> ADD TODO </Typography>
-      <TextField id="outlined-multiline-flexible" value={title} onChange={handleTitleChange} label="Title" error={errors.title} helperText={errors.title && 'Il titolo non può essere vuoto'} />
-      <TextField id="outlined-multiline-flexible" value={desc} onChange={handleDescChange} label="Description" variant="filled"  multiline  rows={4} error={errors.desc} helperText={errors.desc && 'La descrizione non può essere vuota'} />
+      <br/>
+      <h1>
+        <TextField id="outlined-multiline-flexible" value={title} onChange={handleTitleChange} label="Title" error={errors.title} helperText={errors.title && 'Il titolo non può essere vuoto'} />
+      </h1><br/>
+      <TextField sx={{ width: 600 }}id="outlined-multiline-flexible" value={desc} onChange={handleDescChange} label="Description" variant="filled"  multiline  rows={4} error={errors.desc} helperText={errors.desc && 'La descrizione non può essere vuota'} />
+      <br/><br/>
       <Button onClick={handleSubmit}  variant="contained" > SUBMIT </Button>
     </div>
   );

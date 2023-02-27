@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DeleteIcon from '@mui/icons-material/Delete'
 import EditIcon from '@mui/icons-material/Edit';
+import './Home.css';
+
 
 function Home() {
 
@@ -50,15 +52,21 @@ function Home() {
   return (
     <>
       <br /><br />
+      <h2>Aggiungi una task</h2>
       <Button onClick={() => {navigate('add')}} variant="contained">ADD</Button><br /><br />
       {
         todolist && todolist.length > 0 ?
         todolist.map((todo, todoIndex) => {
           return (
-            <div key={todoIndex}>
-              title - {todo.title} / Description - {todo.desc} 
-              <EditIcon style={{ color: 'blue', minWidth: '50px' }} onClick={() => handleEdit(todoIndex)} />
-              <DeleteIcon style={{ color: 'red' }} onClick={() => handleDelete(todoIndex)} />
+            <div key={todoIndex} className="contentGet">
+                <h1>
+                  {todo.title}
+                </h1>
+                <p>
+                  {todo.desc}
+                </p>
+                  <EditIcon className="edit" style={{ color: 'blue', minWidth: '50px' }} onClick={() => handleEdit(todoIndex)} />
+                  <DeleteIcon style={{ color: 'red' }} onClick={() => handleDelete(todoIndex)} />
             </div>
           )
         }) :

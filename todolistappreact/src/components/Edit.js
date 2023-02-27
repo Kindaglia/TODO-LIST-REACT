@@ -49,12 +49,15 @@ function Edit() {
       }
 
     return (
-        <>
+      <div className='contentGet' id='add'>
             <Typography> Edit todo </Typography>
-            <TextField value={title} onChange={(e) => handleTitleChange(e)} label="Title" variant="filled" /> <br />
-            <TextField value={desc} onChange={(e) => handleDescChange(e)} label="Description" variant="filled" />
+            <h1>
+              <TextField value={title} onChange={(e) => handleTitleChange(e)} label="Title" variant="filled" />
+            </h1><br/>
+            <TextField value={desc}  sx={{ width: 600 }} multiline  rows={4} onChange={(e) => handleDescChange(e)} label="Description" variant="filled" />
+            <br/><br/>
             <Button onClick={handleEdit} variant="contained" > SUBMIT </Button>
-        </>
+        </div>
     )
 }
 

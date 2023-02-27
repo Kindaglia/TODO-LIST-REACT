@@ -1,0 +1,36 @@
+.contentGet {
+    margin: auto;
+    width: 50%;
+    border: 3px solid rgb(128, 0, 92);
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: content-box;
+    border-radius: 30px;
+  }
+
+.edit{
+    margin-left: 70%;
+}
+h1{
+    font-size: 26px;
+    margin: 15px 0px 5px 0px;
+    border-bottom: 5px solid rgb(109, 84, 121);
+}
+
+p{
+    border-radius: 0%;
+}
+
+h2{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#add{
+    margin-top: 30px;
+}
+
+#add>h1{
+    border: black;
+}
+

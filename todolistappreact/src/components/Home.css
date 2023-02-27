@@ -1,11 +1,12 @@
 .contentGet {
     margin: auto;
     width: 50%;
-    border: 3px solid rgb(128, 0, 92);
     padding: 10px;
     margin-bottom: 20px;
     box-sizing: content-box;
     border-radius: 30px;
+    box-shadow: 1px 1px 10px black;
+    background-color: transparent;
   }
 
 .edit{
@@ -14,7 +15,7 @@
 h1{
     font-size: 26px;
     margin: 15px 0px 5px 0px;
-    border-bottom: 5px solid rgb(109, 84, 121);
+    border-bottom:5px solid rgb(231, 230, 229);  
 }
 
 p{
@@ -31,7 +32,7 @@ h2{
 }
 
 #add>h1{
-    border: black;
+    border: rgb(112, 111, 111);
 }
 
 #iconAdd{

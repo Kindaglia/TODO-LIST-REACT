@@ -45,3 +45,11 @@ body{
     color: aliceblue;
   }
 
+.leftText{
+    text-align: left;
+    color: rgb(195, 130, 197);
+}
+
+.righttText{
+    text-align: left;
+}

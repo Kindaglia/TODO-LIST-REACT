@@ -52,17 +52,17 @@ function Home() {
 
   return (
     <>
-      <h2>Add Task</h2>
+      <h2>Aggiungi Task</h2>
       <Button id="iconAdd" onClick={() => {navigate('add')}} variant="contained"><AddBoxIcon></AddBoxIcon></Button><br /><br />
       {
         todolist && todolist.length > 0 ?
         todolist.map((todo, todoIndex) => {
           return (
             <div key={todoIndex} className="contentGet">
-                <h1>
+                <h1 className="leftText">
                   {todo.title}
                 </h1>
-                <p>
+                <p className="righttText">
                   {todo.desc}
                 </p>
                   <EditIcon className="edit" style={{ color: 'blue', minWidth: '50px' }} onClick={() => handleEdit(todoIndex)} />

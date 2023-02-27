@@ -10,11 +10,11 @@ function Edit() {
 
     useEffect(() => {
         const editIndex = localStorage.getItem('editIndex')
-        const blogs = localStorage.getItem('blogs') && localStorage.getItem('blogs').length > 0 ? JSON.parse(localStorage.getItem('blogs')) : []
+        const todolist = localStorage.getItem('todolist') && localStorage.getItem('todolist').length > 0 ? JSON.parse(localStorage.getItem('todolist')) : []
 
-        if (editIndex !== null && blogs[editIndex]) {
-            setTitle(blogs[editIndex].title)
-            setDesc(blogs[editIndex].desc)
+        if (editIndex !== null && todolist[editIndex]) {
+            setTitle(todolist[editIndex].title)
+            setDesc(todolist[editIndex].desc)
         }
     }, [])
 
@@ -34,23 +34,23 @@ function Edit() {
         }
       
         const editIndex = localStorage.getItem('editIndex')
-        const blogs = localStorage.getItem('blogs') && localStorage.getItem('blogs').length > 0 ? JSON.parse(localStorage.getItem('blogs')) : []
+        const todolist = localStorage.getItem('todolist') && localStorage.getItem('todolist').length > 0 ? JSON.parse(localStorage.getItem('todolist')) : []
       
-        const _blogs = blogs.map((blog, blogInIndex) => {
-          if (blogInIndex === parseInt(editIndex)) {
+        const _todolist = todolist.map((todo, todoInIndex) => {
+          if (todoInIndex === parseInt(editIndex)) {
             return { title, desc }
           } else {
-            return blog
+            return todo
           }
         })
       
-        localStorage.setItem('blogs', JSON.stringify(_blogs))
+        localStorage.setItem('todolist', JSON.stringify(_todolist))
         navigate('/')
       }
 
     return (
         <>
-            <Typography> Edit BLOG </Typography>
+            <Typography> Edit todo </Typography>
             <TextField value={title} onChange={(e) => handleTitleChange(e)} label="Title" variant="filled" /> <br />
             <TextField value={desc} onChange={(e) => handleDescChange(e)} label="Description" variant="filled" />
             <Button onClick={handleEdit} variant="contained" > SUBMIT </Button>

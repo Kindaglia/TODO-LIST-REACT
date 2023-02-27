@@ -7,32 +7,32 @@ import EditIcon from '@mui/icons-material/Edit';
 function Home() {
 
   const navigate = useNavigate()
-  const [blogs, setBlogs] = useState([])
+  const [todolist, settodolist] = useState([])
   const [deleteIndex, setDeleteIndex] = useState(null)
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
 
   useEffect(() => {
-      const blogs = localStorage.getItem('blogs')
-      setBlogs(JSON.parse(blogs))
+      const todolist = localStorage.getItem('todolist')
+      settodolist(JSON.parse(todolist))
   }, [])
 
-  const handleDelete = (blogOutIndex) => {
-      setDeleteIndex(blogOutIndex)
+  const handleDelete = (todoOutIndex) => {
+      setDeleteIndex(todoOutIndex)
       setDeleteDialogOpen(true)
   }
 
   const handleConfirmDelete = () => {
-    const _blogs = blogs.filter((blog, blogInIndex) => {
-      if (blogInIndex !== deleteIndex) {
-        return blog
+    const _todolist = todolist.filter((todo, todoInIndex) => {
+      if (todoInIndex !== deleteIndex) {
+        return todo
       } else {
         return null
       }
-    }).filter((blog) => blog !== null)
+    }).filter((todo) => todo !== null)
     
-      console.log(_blogs)
-      setBlogs(_blogs)
-      localStorage.setItem('blogs', JSON.stringify(_blogs))
+      console.log(_todolist)
+      settodolist(_todolist)
+      localStorage.setItem('todolist', JSON.stringify(_todolist))
       setDeleteIndex(null)
       setDeleteDialogOpen(false)
   }
@@ -42,8 +42,8 @@ function Home() {
       setDeleteDialogOpen(false)
   }
 
-  const handleEdit = (blogIndex) => {
-      localStorage.setItem('editIndex', blogIndex)
+  const handleEdit = (todoIndex) => {
+      localStorage.setItem('editIndex', todoIndex)
       navigate('/edit')
   }
 
@@ -52,13 +52,13 @@ function Home() {
       <br /><br />
       <Button onClick={() => {navigate('add')}} variant="contained">ADD</Button><br /><br />
       {
-        blogs && blogs.length > 0 ?
-        blogs.map((blog, blogIndex) => {
+        todolist && todolist.length > 0 ?
+        todolist.map((todo, todoIndex) => {
           return (
-            <div key={blogIndex}>
-              title - {blog.title} / Description - {blog.desc} 
-              <EditIcon style={{ color: 'blue', minWidth: '50px' }} onClick={() => handleEdit(blogIndex)} />
-              <DeleteIcon style={{ color: 'red' }} onClick={() => handleDelete(blogIndex)} />
+            <div key={todoIndex}>
+              title - {todo.title} / Description - {todo.desc} 
+              <EditIcon style={{ color: 'blue', minWidth: '50px' }} onClick={() => handleEdit(todoIndex)} />
+              <DeleteIcon style={{ color: 'red' }} onClick={() => handleDelete(todoIndex)} />
             </div>
           )
         }) :

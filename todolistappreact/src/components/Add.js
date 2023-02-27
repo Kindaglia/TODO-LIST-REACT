@@ -34,16 +34,16 @@ function Add() {
 
     console.log({ title, desc })
 
-    const _blogs = localStorage.getItem('blogs') && localStorage.getItem('blogs').length > 0 ? JSON.parse(localStorage.getItem('blogs')) : []
+    const _todolist = localStorage.getItem('todolist') && localStorage.getItem('todolist').length > 0 ? JSON.parse(localStorage.getItem('todolist')) : []
 
-    localStorage.setItem('blogs', JSON.stringify([..._blogs, { title, desc }]))
+    localStorage.setItem('todolist', JSON.stringify([..._todolist, { title, desc }]))
 
     navigate('/')
   }
 
   return (
     <div>
-      <Typography> ADD BLOG </Typography>
+      <Typography> ADD TODO </Typography>
       <TextField id="outlined-multiline-flexible" value={title} onChange={handleTitleChange} label="Title" error={errors.title} helperText={errors.title && 'Il titolo non può essere vuoto'} />
       <TextField id="outlined-multiline-flexible" value={desc} onChange={handleDescChange} label="Description" variant="filled"  multiline  rows={4} error={errors.desc} helperText={errors.desc && 'La descrizione non può essere vuota'} />
       <Button onClick={handleSubmit}  variant="contained" > SUBMIT </Button>

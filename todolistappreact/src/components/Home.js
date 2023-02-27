@@ -55,12 +55,12 @@ function Home() {
         todolist && todolist.length > 0 ?
         todolist.map((todo, todoIndex) => {
           return (
-            <div key={todoIndex} className="contentGet" id="testt">
+            <div key={todoIndex} className="contentGet" >
                 <h1 className="leftText">
                   {todo.title}
                 </h1>
                 <div className="buttonEdDel">
-                  <AppRegistrationIcon className="edit" style={{ color: 'blue', minWidth: '50px' }} onClick={() => handleEdit(todoIndex)} />
+                  <AppRegistrationIcon  style={{ color: 'orange ' }} onClick={() => handleEdit(todoIndex)} />
                   <RemoveCircleOutlineIcon style={{ color: 'red' }} onClick={() => handleDelete(todoIndex)} />
                 </div>
                 <p className="righttText">

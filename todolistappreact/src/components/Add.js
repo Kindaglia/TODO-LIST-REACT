@@ -12,6 +12,7 @@ function Add() {
   const [isFormValid, setIsFormValid] = useState(false);
   const [errors, setErrors] = useState({});
 
+  //check input
   useEffect(() => {
     setIsFormValid(title !== '' && desc !== '');
   }, [title, desc]);
@@ -43,7 +44,7 @@ function Add() {
 
   return (
     <div className='contentGet' id='add'>
-      <Typography> ADD TODO </Typography>
+      <Typography> AGGIUNGI TASK </Typography>
       <br/>
       <h1>
         Titolo: <br/>
@@ -58,7 +59,8 @@ function Add() {
         rows={4} error={errors.desc} 
         helperText={errors.desc && 'La descrizione non può essere vuota'}/>
       <br/><br/>
-      <Button onClick={handleSubmit}  variant="contained" > SUBMIT </Button>
+        <Button onClick={handleSubmit}  variant="contained" > AGGIUNGI </Button>
+      
     </div>
   );
 }

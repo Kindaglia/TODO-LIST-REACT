@@ -11,10 +11,6 @@
     
   }
 
-.edit{
-    margin-left: 70%;   
-    cursor:pointer;
-}
 h1{     
     font-size: 26px;
     margin: 15px 0px 5px 0px;
@@ -51,15 +47,6 @@ body{
     color: aliceblue;
   }
 
-.leftText{
-    text-align: left;
-    color: rgb(195, 130, 197);
-    display: inline;;
-}
-
-.righttText{
-    /* text-align: left; */
-}
 
 
 
@@ -104,9 +91,15 @@ body{
 
 .buttonEdDel{
     box-sizing: content-box;
-    display: inline;
+    display: inline-block;
     cursor:pointer;
+    float: right;
 }
 
-
-
+.leftText{
+    margin-left: 6%;
+    text-align: left;
+    color: rgb(195, 130, 197);
+    display: inline-block;
+    
+}
